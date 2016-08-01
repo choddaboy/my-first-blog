@@ -20,7 +20,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),  #for every URL that starts with admin/, Django finds a corresponding view.
- #   url(r'', include('blog.urls')), # import Blogs into the main URL ('')-anything that comes into 127.0.0.1:8000/ will be redirected to blogs.url and look for further instructions there.for
+    url(r'', include('blog.urls')), # import Blogs into the main URL ('')-anything that comes into 127.0.0.1:8000/ will be redirected to blogs.url and look for further instructions there.for
     #write regular expressions with an 'r' infront of the string. This hints to Python the string may contain special characters not meant for Python but for the Regular Expression.
 
 ]
