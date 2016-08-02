@@ -4,5 +4,5 @@ mysiteEnv
 db.sqlite3
 /static
 .DS_Store
-post_list.html
+
 

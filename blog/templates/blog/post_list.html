@@ -1,0 +1,25 @@
+<!--connect template base.html to post_list.html via an extends tag-->
+{% extends 'blog/base.html' %}
+
+
+<!--Add block tags to the file (post_list.html):
+1. add % block content % to start and % endblock % to the end-->
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+
+            <!-- Link from a posts title in the post list to the post's detail page.
+            blog.views.post_detail is a path to post_detail view we want to create.
+            1.blog: the name of our applications
+            2. views: the name of views.py file
+            3. post_details: the name of the view-->
+
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
