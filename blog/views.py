@@ -1,3 +1,5 @@
+from django.shortcuts import render, get_object_or_404 # include model render
+
 from django.shortcuts import render
 from django.utils import timezone
 #include model Post: (the . before models means: "current directory/application"
@@ -20,3 +22,6 @@ posts: variable for QuerySet
 
 """
 
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})

@@ -1,0 +1,51 @@
+<!--This is a "base template". It can be extended as a basic template
+for every page of your website.-->
+
+{% load staticfiles %} <!--tells html that we added some CSS
+the browser reads files in the order they're given -->
+<html>
+    <head>
+
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> <!--change font-->
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}"> <!--tell the template where the css file is located-->
+
+    </head>
+
+    <body>
+        <div class ="page-header">
+            <h1><a href="">Django Girls Blogs</a></h1>
+        </div>
+        <div class="content containter">
+            <div class="row">
+                <div class="col-md-8">
+
+                <!--use template tag "block" to make an area that
+                 will have HTML inserted in it from another template
+                 that extends this template (base.html)-->
+
+                    {% block content %}
+                    {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+<!--customize it:
+<h1>A heading</h1> - for your most important heading
+<h2>A sub-heading</h2> for a heading at the next level
+<h3>A sub-sub-heading</h3> ... and so on, up to <h6>
+<p>A paragraph of text</p>
+<em>text</em> emphasizes your text
+<strong>text</strong> strongly emphasizes your text
+<br /> goes to another line (you can't put anything inside br)
+<a href="https://djangogirls.org">link</a> creates a link
+<ul><li>first item</li><li>second item</li></ul> makes a list, just like this one!
+<div></div> defines a section of the page
+
+-->
