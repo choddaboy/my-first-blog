@@ -6,11 +6,18 @@ from . import views
 
 
 urlpatterns = [
+    #URL to point to view post_new
+    url(r'^post/new/$', views.post_new, name='post_new'),
+
+    #edit a post:
+    url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
+
     #First URL pattern
     url(r'^$', views.post_list, name='post_list'), #comment 1.
 
     #URL to point to a view names post_detail
     url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'), #comment 2.
+
 
 ]
 """  Comment 1:

@@ -13,9 +13,11 @@ the browser reads files in the order they're given -->
         <link rel="stylesheet" href="{% static 'css/blog.css' %}"> <!--tell the template where the css file is located-->
 
     </head>
-
     <body>
         <div class ="page-header">
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> <!--adds a link. new view is "post_new"-->
+        {% endif %}
             <h1><a href="">Django Girls Blogs</a></h1>
         </div>
         <div class="content containter">
